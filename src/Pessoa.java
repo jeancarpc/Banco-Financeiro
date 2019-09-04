@@ -1,4 +1,6 @@
 public class Pessoa {
+
+    static int lenght;
     private String dataNascimento;
     private String cidade;
     private String bairro;

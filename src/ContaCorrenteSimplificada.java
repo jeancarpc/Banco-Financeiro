@@ -5,6 +5,21 @@ public class ContaCorrenteSimplificada {
         private double saldo;
         // Alteração Dia 03/09/2019
         private Pessoa pessoa;
+        private Pessoa[] pessoas = new Pessoa[100];
+        private int qtd = 0;
+        int cont = 0;
+        
+        public boolean AdicionarCorrentista(Pessoa p){
+            
+            if(qtd<100){
+                this.pessoas[qtd] = p;
+                qtd++;
+                return true;
+            }
+            return false;
+            }
+            
+
        /** private String nomeDoCorrentista;
         private String rg;
         private String cpf;
@@ -16,20 +31,25 @@ public class ContaCorrenteSimplificada {
         public Pessoa getPessoa(){
             return this.pessoa;
         }
-    public void ExibirDados(){
-         // Alteração Dia 03/09/2019
+        public void ExibirDados(){
+         // Alteração Dia 04/09/2019
+         
          System.out.println("AGENCIA: "+ this.agencia);
          System.out.println("CONTA-CORRENTE: "+ this.nroConta);
-         if(this.pessoa instanceof PessoaFisica){
-         System.out.println("NOME: "+ ((PessoaFisica)this.pessoa).getNomeCompleto());
-         System.out.println("RG: "+ ((PessoaFisica)this.pessoa).getRg());
-         System.out.println("CPF: "+ ((PessoaFisica)this.pessoa).getCpf());
+                  
+         for(int i = 0; i < qtd; i++){
+                if(this.pessoas[i] instanceof PessoaFisica){
+                System.out.println("NOME: "+ ((PessoaFisica)this.pessoas[i]).getNomeCompleto());
+                System.out.println("RG: "+ ((PessoaFisica)this.pessoas[i]).getRg());
+                System.out.println("CPF: "+ ((PessoaFisica)this.pessoas[i]).getCpf());
              
-         }else if(this.pessoa instanceof PessoaJuridica){
-             System.out.println("NOME-FANTASIA: "+((PessoaJuridica)this.pessoa).getNomeFantasia());
-             System.out.println("RAZÃO-SOCIAL: "+((PessoaJuridica)this.pessoa).getRazaoSocial());
-             System.out.println("CNPJ: "+((PessoaJuridica)this.pessoa).getCnpj());
+         }else if(this.pessoas[i] instanceof PessoaJuridica){
+             System.out.println("NOME-FANTASIA: "+((PessoaJuridica)this.pessoas[i]).getNomeFantasia());
+             System.out.println("RAZÃO-SOCIAL: "+((PessoaJuridica)this.pessoas[i]).getRazaoSocial());
+             System.out.println("CNPJ: "+((PessoaJuridica)this.pessoas[i]).getCnpj());
     }
+         }
+         // Alteração Dia 03/09/2019
          System.out.println("SALDO: "+this.saldo);
 
         /*System.out.println("AGENCIA: "+ this.agencia);
