@@ -1,3 +1,6 @@
+
+import java.util.Stack;
+
 public class Principal {
     public static void main(String[] args){
         ContaCorrenteSimplificada conta1, conta2 = null;
@@ -88,7 +91,26 @@ public class Principal {
         System.out.println("=================================================");
         System.out.println("\n 04/09/2019");
         
-        
+        Stack<Integer> pilha = new Stack<Integer>();
+                
+                pilha.push(10);
+                pilha.push(15);
+                pilha.push(20);
+                
+                System.out.println(pilha.pop());
+                System.out.println(pilha.pop());
+                System.out.println(pilha.pop());
+                
+                pilha.push(10);
+                pilha.push(15);
+                pilha.push(20);
+                pilha.push(35);
+                pilha.push(45);
+                pilha.push(50);
+                
+                while(!pilha.isEmpty()){
+                    System.out.println(pilha.pop());
+                }
         
     }
     
